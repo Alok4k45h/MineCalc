@@ -1,0 +1,17 @@
+.question-text {
+  background-color: #33aed0;
+  color: white;
+  font-family: "Roboto";
+  font-size: 28px;
+}
+
+.answer-text {
+  color: #5a7184;
+  font-family: "Roboto";
+  font-size: 16px;
+}
+
+.icon-angle {
+  color: white;
+  font-size: 25px;
+}

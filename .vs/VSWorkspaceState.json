@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\Components",
+    "\\src\\Components\\LocalComponent",
+    "\\src\\Components\\LocalComponent\\HomePageComponent",
+    "\\src\\Components\\LocalComponent\\HomePageComponent\\CalculationCard",
+    "\\src\\Components\\LocalComponent\\PressureMinePage",
+    "\\src\\Components\\LocalComponent\\PressureMinePage\\PressureMineCalc",
+    "\\src\\Components\\LocalComponent\\RqdPage",
+    "\\src\\Components\\LocalComponent\\RqdPage\\RqdCalc"
+  ],
+  "SelectedNode": "\\src\\Components\\LocalComponent\\RqdPage\\RqdCalc\\RqdCalc.js",
+  "PreviewInSolutionExplorer": false
+}
