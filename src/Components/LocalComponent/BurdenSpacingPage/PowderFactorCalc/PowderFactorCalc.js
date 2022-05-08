@@ -6,74 +6,99 @@ class PowderFactorCalc extends Component {
   constructor() {
     super();
 
-      this.state = {
-          burden: 0,
-          spacing: 0,
-          height: 0,
-          stemming: 0,
-          diameter: 0,
-          subdrill: 0,
-          explosiveDensity: 0,
+    this.state = {
+      burden: "null",
+      spacing: "null",
+      height: "null",
+      stemming: "null",
+      diameter: "null",
+      subdrill: "null",
+      explosiveDensity: "null",
+    };
 
-      };
-
-
-      this.burdenChangeHandler = this.burdenChangeHandler.bind(this);
-      this.spacingChangeHandler = this.spacingChangeHandler.bind(this);
-      this.heightChangeHandler = this.heightChangeHandler.bind(this);
-      this.stemmingChangeHandler = this.stemmingChangeHandler.bind(this);
-      this.diameterChangeHandler = this.diameterChangeHandler.bind(this);
-      this.subdrillChangeHandler = this.subdrillChangeHandler.bind(this);
-      this.explosiveDensityChangeHandler =
-          this.explosiveDensityChangeHandler.bind(this);
-      this.calculateHandler = this.calculateHandler.bind(this);
+    this.burdenChangeHandler = this.burdenChangeHandler.bind(this);
+    this.spacingChangeHandler = this.spacingChangeHandler.bind(this);
+    this.heightChangeHandler = this.heightChangeHandler.bind(this);
+    this.stemmingChangeHandler = this.stemmingChangeHandler.bind(this);
+    this.diameterChangeHandler = this.diameterChangeHandler.bind(this);
+    this.subdrillChangeHandler = this.subdrillChangeHandler.bind(this);
+    this.explosiveDensityChangeHandler =
+      this.explosiveDensityChangeHandler.bind(this);
+    this.calculateHandler = this.calculateHandler.bind(this);
+    this.demoDataHandler = this.demoDataHandler.bind(this);
+    this.resetHandler = this.resetHandler.bind(this);
   }
 
-    burdenChangeHandler(event) {
-        this.setState({ burden: event.target.value });
-    }
+  burdenChangeHandler(event) {
+    this.setState({ burden: event.target.value });
+  }
 
-    spacingChangeHandler(event) {
-        this.setState({ spacing: event.target.value });
-    }
+  spacingChangeHandler(event) {
+    this.setState({ spacing: event.target.value });
+  }
 
-    heightChangeHandler(event) {
-        this.setState({ height: event.target.value });
-    }
+  heightChangeHandler(event) {
+    this.setState({ height: event.target.value });
+  }
 
-    stemmingChangeHandler(event) {
-        this.setState({ stemming: event.target.value });
-    }
+  stemmingChangeHandler(event) {
+    this.setState({ stemming: event.target.value });
+  }
 
-    diameterChangeHandler(event) {
-        this.setState({ diameter: event.target.value });
-    }
+  diameterChangeHandler(event) {
+    this.setState({ diameter: event.target.value });
+  }
 
-    subdrillChangeHandler(event) {
-        this.setState({ subdrill: event.target.value });
-    }
+  subdrillChangeHandler(event) {
+    this.setState({ subdrill: event.target.value });
+  }
 
-    explosiveDensityChangeHandler(event) {
-        this.setState({ explosiveDensity: event.target.value });
-    }
+  explosiveDensityChangeHandler(event) {
+    this.setState({ explosiveDensity: event.target.value });
+  }
 
-    calculateHandler() {
-        const {
-            burden,
-            spacing,
-            height,
-            stemming,
-            diameter,
-            subdrill,
-            explosiveDensity,
-        } = this.state;
-        const x = (parseInt(height) + parseInt(subdrill)) - parseInt(stemming);
-        const result =
+  calculateHandler() {
+    const {
+      burden,
+      spacing,
+      height,
+      stemming,
+      diameter,
+      subdrill,
+      explosiveDensity,
+    } = this.state;
+    const x = parseInt(height) + parseInt(subdrill) - parseInt(stemming);
+    const result =
+      (3.14 * diameter * diameter * x * explosiveDensity) /
+      (burden * spacing * height * 1000 * 1000 * 4);
 
-            (3.14 * diameter * diameter * (x) * explosiveDensity) / (burden * spacing * height * 1000 * 1000 * 4);
+    this.setState({ output: result });
+  }
 
-        this.setState({ output: result });
-    }
+  demoDataHandler() {
+    this.setState({
+      burden: 5,
+      spacing: 10,
+      height: 15,
+      stemming: 20,
+      diameter: 14,
+      subdrill: 18,
+      explosiveDensity: 15,
+      output: null,
+    });
+  }
+  resetHandler() {
+    this.setState({
+      burden: "null",
+      spacing: "null",
+      height: "null",
+      stemming: "null",
+      diameter: "null",
+      subdrill: "null",
+      explosiveDensity: "null",
+      output: null,
+    });
+  }
 
   render() {
     return (
@@ -102,6 +127,7 @@ class PowderFactorCalc extends Component {
                   <label>
                     Burden(m):
                     <input
+                      value={this.state.burden}
                       className="ml-3"
                       type="number"
                       placeholder="Enter the Burden Value"
@@ -114,6 +140,7 @@ class PowderFactorCalc extends Component {
                   <label>
                     Spacing(m):
                     <input
+                      value={this.state.spacing}
                       className="ml-3"
                       type="number"
                       placeholder="Enter the Spacing Value"
@@ -126,6 +153,7 @@ class PowderFactorCalc extends Component {
                   <label>
                     Height(m):
                     <input
+                      value={this.state.height}
                       className="ml-3"
                       type="number"
                       placeholder="Enter the Height Value"
@@ -138,6 +166,7 @@ class PowderFactorCalc extends Component {
                   <label>
                     Stemming(m):
                     <input
+                      value={this.state.stemming}
                       className="ml-3"
                       type="number"
                       placeholder="Enter the Rock Density Value"
@@ -150,6 +179,7 @@ class PowderFactorCalc extends Component {
                   <label>
                     Diameter(mm):
                     <input
+                      value={this.state.diameter}
                       className="ml-3"
                       type="number"
                       placeholder="Enter the Diameter Value"
@@ -162,6 +192,7 @@ class PowderFactorCalc extends Component {
                   <label>
                     Subdrill(m):
                     <input
+                      value={this.state.subdrill}
                       className="ml-3"
                       type="number"
                       placeholder="Enter the Subdrill Value"
@@ -174,6 +205,7 @@ class PowderFactorCalc extends Component {
                   <label>
                     Density of Explosive(kg/m3):
                     <input
+                      value={this.state.explosiveDensity}
                       className="ml-3"
                       type="number"
                       placeholder="Enter the Explosive Density Value"
@@ -181,12 +213,33 @@ class PowderFactorCalc extends Component {
                     />
                   </label>
                 </div>
-                <div className="col-12 mb-5">
-                  <div
-                    className="btn btn-outline-primary"
-                    onClick={this.calculateHandler}
-                  >
-                    Calculate
+                <div className="container">
+                  <div className="row">
+                    <div className="col-12 col-sm-4 mb-5">
+                      <div
+                        className="btn btn-outline-primary"
+                        onClick={this.demoDataHandler}
+                      >
+                        Demo data
+                      </div>
+                    </div>
+                    <div className="col-12 col-sm-4 mb-5">
+                      <div
+                        className="btn btn-outline-primary"
+                        onClick={this.calculateHandler}
+                      >
+                        Calculate
+                      </div>
+                    </div>
+
+                    <div className="col-12 col-sm-4 mb-5">
+                      <div
+                        className="btn btn-outline-primary"
+                        onClick={this.resetHandler}
+                      >
+                        Reset
+                      </div>
+                    </div>
                   </div>
                 </div>
 
