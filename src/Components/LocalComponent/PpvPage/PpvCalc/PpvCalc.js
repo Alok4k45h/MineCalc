@@ -2,50 +2,73 @@ import React, { Component } from "react";
 import "./PpvCalc.css";
 
 class PpvCalc extends Component {
-    constructor() {
-        super();
+  constructor() {
+    super();
 
-        this.state = {
-            k: 0,
-            d: 0,
-            w: 0,
-            a: 0,
-            r: 0
-        };
+    this.state = {
+      k: null,
+      d: null,
+      w: null,
+      a: null,
+      r: null,
+    };
 
-        this.kChangeHandler = this.kChangeHandler.bind(this);
-        this.dChangeHandler = this.dChangeHandler.bind(this);
-        this.wChangeHandler = this.wChangeHandler.bind(this);
-        this.aChangeHandler = this.aChangeHandler.bind(this);
-        this.rChangeHandler = this.rChangeHandler.bind(this);
-        this.calculateHandler = this.calculateHandler.bind(this);
-    }
+    this.kChangeHandler = this.kChangeHandler.bind(this);
+    this.dChangeHandler = this.dChangeHandler.bind(this);
+    this.wChangeHandler = this.wChangeHandler.bind(this);
+    this.aChangeHandler = this.aChangeHandler.bind(this);
+    this.rChangeHandler = this.rChangeHandler.bind(this);
+    this.calculateHandler = this.calculateHandler.bind(this);
+    this.demoDataHandler = this.demoDataHandler.bind(this);
+    this.resetHandler = this.resetHandler.bind(this);
+  }
 
-    kChangeHandler(event) {
-        this.setState({ k: event.target.value });
-    }
+  kChangeHandler(event) {
+    this.setState({ k: event.target.value });
+  }
 
-    dChangeHandler(event) {
-        this.setState({ d: event.target.value });
-    }
+  dChangeHandler(event) {
+    this.setState({ d: event.target.value });
+  }
 
-    wChangeHandler(event) {
-        this.setState({ w: event.target.value });
-    }
+  wChangeHandler(event) {
+    this.setState({ w: event.target.value });
+  }
 
-    aChangeHandler(event) {
-        this.setState({ a: event.target.value });
-    }
+  aChangeHandler(event) {
+    this.setState({ a: event.target.value });
+  }
 
-    rChangeHandler(event) {
-        this.setState({ r: event.target.value });
-    }
+  rChangeHandler(event) {
+    console.log(typeof event.target.value);
+    this.setState({ r: event.target.value });
+  }
 
-    calculateHandler() {
-        const { k, d, w, a, r } = this.state;
-        const result = k * (d / w ** a) ** -r;
-        this.setState({ output: result });
-    }
+  calculateHandler() {
+    const { k, d, w, a, r } = this.state;
+    const result = k * (d / w ** a) ** -r;
+    this.setState({ output: result });
+  }
+  demoDataHandler() {
+    this.setState({
+      k: "5",
+      d: "1",
+      w: "1",
+      a: "4",
+      r: "4",
+      output: null,
+    });
+  }
+  resetHandler() {
+    this.setState({
+      k: "null",
+      d: "null",
+      w: "null",
+      a: "null",
+      r: "null",
+      output: null,
+    });
+  }
 
   render() {
     return (
@@ -54,11 +77,7 @@ class PpvCalc extends Component {
           <div className="container">
             <div className="row">
               <div className="col-12 col-md-7">
-                <img
-                  src="./Ppv.png"
-                  className="page-section-image"
-                  alt=""
-                />
+                <img src="./Ppv.png" className="page-section-image" alt="" />
               </div>
 
               <div className="col-12 col-md-5 d-flex flex-column justify-content-center">
@@ -72,12 +91,13 @@ class PpvCalc extends Component {
                 </div>
                 <div className="col-12 mb-3">
                   <label>
-                   k:
+                    k:
                     <input
+                      value={this.state.k}
                       className="ml-3"
-                                        type="number"
-                                        placeholder="Enter the K Value"
-                                        onChange={this.kChangeHandler}
+                      type="number"
+                      placeholder="Enter the K Value"
+                      onChange={this.kChangeHandler}
                     />
                   </label>
                 </div>
@@ -86,10 +106,11 @@ class PpvCalc extends Component {
                   <label>
                     d(m):
                     <input
+                      value={this.state.d}
                       className="ml-3"
-                                        type="number"
-                                        placeholder="Enter the d Value"
-                                        onChange={this.dChangeHandler}
+                      type="number"
+                      placeholder="Enter the d Value"
+                      onChange={this.dChangeHandler}
                     />
                   </label>
                 </div>
@@ -98,10 +119,11 @@ class PpvCalc extends Component {
                   <label>
                     w(kg):
                     <input
+                      value={this.state.w}
                       className="ml-3"
-                                        type="number"
-                                        placeholder="Enter the w Value"
-                                        onChange={this.wChangeHandler}
+                      type="number"
+                      placeholder="Enter the w Value"
+                      onChange={this.wChangeHandler}
                     />
                   </label>
                 </div>
@@ -110,10 +132,11 @@ class PpvCalc extends Component {
                   <label>
                     a:
                     <input
+                      value={this.state.a}
                       className="ml-3"
-                                        type="number"
-                                        placeholder="Enter the a Value"
-                                        onChange={this.aChangeHandler}
+                      type="number"
+                      placeholder="Enter the a Value"
+                      onChange={this.aChangeHandler}
                     />
                   </label>
                 </div>
@@ -122,26 +145,43 @@ class PpvCalc extends Component {
                   <label>
                     r:
                     <input
+                      value={this.state.r}
                       className="ml-3"
-                                        type="number"
-                                        placeholder="Enter the r Value"
-                                        onChange={this.rChangeHandler}
+                      type="number"
+                      placeholder="Enter the r Value"
+                      onChange={this.rChangeHandler}
                     />
                   </label>
                 </div>
+                <div className="container">
+                  <div className="row">
+                    <div className="col-12 col-sm-4 mb-5">
+                      <div
+                        className="btn btn-outline-primary"
+                        onClick={this.demoDataHandler}
+                      >
+                        Demo data
+                      </div>
+                    </div>
+                    <div className="col-12 col-sm-4 mb-5">
+                      <div
+                        className="btn btn-outline-primary"
+                        onClick={this.calculateHandler}
+                      >
+                        Calculate
+                      </div>
+                    </div>
 
-              
-
-              
-                <div className="col-12 mb-5">
-                  <div
-                    className="btn btn-outline-primary"
-                    onClick={this.calculateHandler}
-                  >
-                    Calculate
+                    <div className="col-12 col-sm-4 mb-5">
+                      <div
+                        className="btn btn-outline-primary"
+                        onClick={this.resetHandler}
+                      >
+                        Reset
+                      </div>
+                    </div>
                   </div>
                 </div>
-
                 <div className="col-12">
                   <h3 className="page-section-sub-heading">Output</h3>
                 </div>
