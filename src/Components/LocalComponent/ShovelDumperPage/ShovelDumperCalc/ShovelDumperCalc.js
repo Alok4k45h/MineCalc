@@ -6,15 +6,15 @@ class ShovelDumperCalc extends Component {
     super();
 
     this.state = {
-      annualproductionofcoal: 0,
-      annualproductionofoverburden: 0,
-      dumpersize: 0,
-      shovelsize: 0,
-      bucketfillfactor: 0,
-      cycletimedumper: 0,
-      cycletimeshovel: 0,
-      workingdaysinyear: 0,
-      workinghoursinday: 0,
+      annualproductionofcoal: null,
+      annualproductionofoverburden: null,
+      dumpersize: null,
+      shovelsize: null,
+      bucketfillfactor: null,
+      cycletimedumper: null,
+      cycletimeshovel: null,
+      workingdaysinyear: null,
+      workinghoursinday: null,
       output: [null, null],
     };
 
@@ -35,6 +35,8 @@ class ShovelDumperCalc extends Component {
     this.workinghoursindayChangeHandler =
       this.workinghoursindayChangeHandler.bind(this);
     this.calculateHandler = this.calculateHandler.bind(this);
+    this.demoDataHandler = this.demoDataHandler.bind(this);
+    this.resetHandler = this.resetHandler.bind(this);
   }
 
   annualproductionofcoalChangeHandler(event) {
@@ -101,6 +103,35 @@ class ShovelDumperCalc extends Component {
     this.setState({ output: result });
     console.log(this.state.output[0]);
   }
+
+  demoDataHandler() {
+    this.setState({
+      annualproductionofcoal: 5,
+      annualproductionofoverburden: 10,
+      dumpersize: 15,
+      shovelsize: 20,
+      bucketfillfactor: 25,
+      cycletimedumper: 78,
+      cycletimeshovel: 11,
+      workingdaysinyear: 10,
+      workinghoursinday: 13,
+      output: [null, null],
+    });
+  }
+  resetHandler() {
+    this.setState({
+      annualproductionofcoal: "null",
+      annualproductionofoverburden: "null",
+      dumpersize: "null",
+      shovelsize: "null",
+      bucketfillfactor: "null",
+      cycletimedumper: "null",
+      cycletimeshovel: "null",
+      workingdaysinyear: "null",
+      workinghoursinday: "null",
+      output: [null, null],
+    });
+  }
   render() {
     return (
       <div>
@@ -124,6 +155,7 @@ class ShovelDumperCalc extends Component {
                   <label>
                     coal production per annum(Milliontonne):
                     <input
+                      value={this.state.annualproductionofcoal}
                       className="ml-3"
                       type="number"
                       placeholder="Enter the coal production per annum"
@@ -137,6 +169,7 @@ class ShovelDumperCalc extends Component {
                     overburden removal per year(Million m3):
                     <input
                       className="ml-3"
+                      value={this.state.annualproductionofoverburden}
                       type="number"
                       placeholder="Enter the overburden removal per year"
                       onChange={this.annualproductionofoverburdenChangeHandler}
@@ -148,6 +181,7 @@ class ShovelDumperCalc extends Component {
                   <label>
                     dumpersize(m3):
                     <input
+                      value={this.state.dumpersize}
                       className="ml-3"
                       type="number"
                       placeholder="Enter the Height Value"
@@ -160,6 +194,7 @@ class ShovelDumperCalc extends Component {
                   <label>
                     shovelsize(m3):
                     <input
+                      value={this.state.shovelsize}
                       className="ml-3"
                       type="number"
                       placeholder="Enter the shovel size"
@@ -172,6 +207,7 @@ class ShovelDumperCalc extends Component {
                   <label>
                     bucketfillfactor:
                     <input
+                      value={this.state.bucketfillfactor}
                       className="ml-3"
                       type="number"
                       placeholder="Enter the bucketfillfactor"
@@ -184,6 +220,7 @@ class ShovelDumperCalc extends Component {
                   <label>
                     cycletimedumper(min):
                     <input
+                      value={this.state.cycletimedumper}
                       className="ml-3"
                       type="number"
                       placeholder="Enter the cycle time of dumper"
@@ -196,6 +233,7 @@ class ShovelDumperCalc extends Component {
                   <label>
                     cycletimeshovel(min):
                     <input
+                      value={this.state.cycletimeshovel}
                       className="ml-3"
                       type="number"
                       placeholder="Enter the cycle time of shovel"
@@ -207,6 +245,7 @@ class ShovelDumperCalc extends Component {
                   <label>
                     workingdaysinyear(days):
                     <input
+                      value={this.state.workingdaysinyear}
                       className="ml-3"
                       type="number"
                       placeholder="Enter the working days in a year"
@@ -218,6 +257,7 @@ class ShovelDumperCalc extends Component {
                   <label>
                     workinghoursinday(hours):
                     <input
+                      value={this.state.workinghoursinday}
                       className="ml-3"
                       type="number"
                       placeholder="Enter the working hours in a day"
@@ -225,12 +265,33 @@ class ShovelDumperCalc extends Component {
                     />
                   </label>
                 </div>
-                <div className="col-12 mb-5">
-                  <div
-                    className="btn btn-outline-primary"
-                    onClick={this.calculateHandler}
-                  >
-                    Calculate
+                <div className="container">
+                  <div className="row">
+                    <div className="col-12 col-sm-4 mb-5">
+                      <div
+                        className="btn btn-outline-primary"
+                        onClick={this.demoDataHandler}
+                      >
+                        Demo data
+                      </div>
+                    </div>
+                    <div className="col-12 col-sm-4 mb-5">
+                      <div
+                        className="btn btn-outline-primary"
+                        onClick={this.calculateHandler}
+                      >
+                        Calculate
+                      </div>
+                    </div>
+
+                    <div className="col-12 col-sm-4 mb-5">
+                      <div
+                        className="btn btn-outline-primary"
+                        onClick={this.resetHandler}
+                      >
+                        Reset
+                      </div>
+                    </div>
                   </div>
                 </div>
 
