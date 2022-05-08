@@ -4,39 +4,56 @@ class RqdCalc extends Component {
   constructor() {
     super();
 
-        this.state = {
-            SampleLength: 0,
-            corelength: 0
-        };
+    this.state = {
+      SampleLength: "",
+      corelength: null,
+    };
 
-        this.SampleLengthChangeHandler = this.SampleLengthChangeHandler.bind(this);
-        this.corelengthChangeHandler = this.corelengthChangeHandler.bind(this);
-        this.calculateHandler = this.calculateHandler.bind(this);
+    this.SampleLengthChangeHandler = this.SampleLengthChangeHandler.bind(this);
+    this.corelengthChangeHandler = this.corelengthChangeHandler.bind(this);
+    this.calculateHandler = this.calculateHandler.bind(this);
+    this.demoDataHandler = this.demoDataHandler.bind(this);
+    this.resetHandler = this.resetHandler.bind(this);
+  }
+
+  SampleLengthChangeHandler(event) {
+    this.setState({ SampleLength: event.target.value });
+  }
+
+  corelengthChangeHandler(event) {
+    this.setState({ corelength: event.target.value });
+  }
+
+  calculateHandler() {
+    const { SampleLength, corelength } = this.state;
+    const myArray = SampleLength.split(",");
+    var numerator = 0;
+    for (let i = 0; i < myArray.length; i++) {
+      var temp = parseInt(myArray[i]);
+      if (temp > 10) {
+        numerator += temp;
+      }
     }
 
-    SampleLengthChangeHandler(event) {
-        this.setState({ SampleLength: event.target.value });
-    }
+    const result = (numerator / corelength) * 100;
+    this.setState({ output: result });
+  }
 
-    corelengthChangeHandler(event) {
-        this.setState({ corelength: event.target.value });
-    }
+  demoDataHandler() {
+    this.setState({
+      SampleLength: "15,7,43,5,9,12,25",
+      corelength: "125",
+      output: null,
+    });
+  }
+  resetHandler() {
+    this.setState({
+      SampleLength: "",
+      corelength: "null",
+      output: null,
+    });
+  }
 
-    calculateHandler() {
-        console.log(this.state);
-        const { SampleLength, corelength } = this.state;
-        const myArray = SampleLength.split(",");
-        var numerator = 0;
-
-        for (let i = 0; i < myArray.length; i++) {
-            var temp = parseInt(myArray[i]);
-            if (temp > 10) {
-                numerator += temp;
-            }
-        }
-        const result = numerator / corelength * 100;
-        this.setState({ output: result });
-    }
   render() {
     return (
       <div>
@@ -44,11 +61,7 @@ class RqdCalc extends Component {
           <div className="container">
             <div className="row">
               <div className="col-12 col-md-7">
-                <img
-                  src="./rqd.jpg"
-                  className="page-section-image"
-                  alt=""
-                />
+                <img src="./rqd.jpg" className="page-section-image" alt="" />
               </div>
 
               <div className="col-12 col-md-5 d-flex flex-column justify-content-center">
@@ -62,35 +75,57 @@ class RqdCalc extends Component {
                 </div>
                 <div className="col-12 mb-3">
                   <label>
-                                    samplelength(cm):
+                    samplelength(cm):
                     <input
+                      value={this.state.SampleLength}
                       className="ml-3"
-                                        type="string"
-                                        placeholder="comma separated length of sound pieces"
-                                        onChange={this.SampleLengthChangeHandler}
-                                    />
+                      type="string"
+                      placeholder="comma separated length of sound pieces"
+                      onChange={this.SampleLengthChangeHandler}
+                    />
                   </label>
                 </div>
 
                 <div className="col-12 mb-3">
                   <label>
-                                    corelength(cm):
+                    corelength(cm):
                     <input
+                      value={this.state.corelength}
                       className="ml-3"
-                                        type="number"
-                                        placeholder="Enter corelength"
-                                        onChange={this.corelengthChangeHandler}
-                                    />
+                      type="number"
+                      placeholder="Enter corelength"
+                      onChange={this.corelengthChangeHandler}
+                    />
                   </label>
                 </div>
 
-               
-                <div className="col-12 mb-5">
-                  <div
-                    className="btn btn-outline-primary"
-                    onClick={this.calculateHandler}
-                  >
-                    Calculate
+                <div className="container">
+                  <div className="row">
+                    <div className="col-12 col-sm-4 mb-5">
+                      <div
+                        className="btn btn-outline-primary"
+                        onClick={this.demoDataHandler}
+                      >
+                        Demo data
+                      </div>
+                    </div>
+                    <div className="col-12 col-sm-4 mb-5">
+                      <div
+                        className="btn btn-outline-primary"
+                        onClick={this.calculateHandler}
+                      >
+                        Calculate
+                      </div>
+                    </div>
+
+                    <div className="col-12 col-sm-4 mb-5">
+                      <div
+                        className="btn btn-outline-primary"
+                        onClick={this.resetHandler}
+                      >
+                        Reset
+                      </div>
+                    </div>
                   </div>
                 </div>
 
