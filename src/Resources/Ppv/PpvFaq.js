@@ -1,23 +1,17 @@
 const Faq = [
   {
-    question: "1.Anim pariatur cliche reprehenderit, enim eiusmod high life",
+    question: "1.How much PPV is concsidered to be safe?",
     answer:
-      "1.Lorem ipsum dolor sit amet consectetur adipiscing elit consequat sociosqu phasellus dictum tincidunt, ante vulputate natoque duis egestas hac libero donec id vitae volutpat integer imperdiet, aenean justo purus sed morbi torquent penatibus mollis posuere quam habitasse. Molestie sed netus sapien donec inceptos nostra vivamus semper platea lobortis volutpat, imperdiet eget gravida orci erat posuere mattis fames nulla. Sollicitudin sodales non vestibulum vehicula quis venenatis egestas id dictumst, semper convallis nam donec facilisi aenean neque. Tristique sapien cubilia fusce quam porttitor etiam torquent arcu, scelerisque vitae mauris nibh litora bibendum sed, senectus elementum per dui felis ultrices mattis. Facilisis ridiculus curabitur convallis platea senectus orci at conubia nisl, rhoncus morbi nec cum vitae in aptent purus semper, magnis tellus placerat tincidunt vestibulum dui malesuada pellentesque. Condimentum integer volutpat purus nulla leo nostra maecenas quisque cum rhoncus laoreet mattis, quam nullam aenean",
+      "It depends upon type of building in general it should be less than 12mm/sec.",
   },
   {
-    question: "2.Anim pariatur cliche reprehenderit, enim eiusmod high life",
-    answer:
-      "2.Lorem ipsum dolor sit amet consectetur adipiscing elit consequat sociosqu phasellus dictum tincidunt, ante vulputate natoque duis egestas hac libero donec id vitae volutpat integer imperdiet, aenean justo purus sed morbi torquent penatibus mollis posuere quam habitasse. Molestie sed netus sapien donec inceptos nostra vivamus semper platea lobortis volutpat, imperdiet eget gravida orci erat posuere mattis fames nulla. Sollicitudin sodales non vestibulum vehicula quis venenatis egestas id dictumst, semper convallis nam donec facilisi aenean neque. Tristique sapien cubilia fusce quam porttitor etiam torquent arcu, scelerisque vitae mauris nibh litora bibendum sed, senectus elementum per dui felis ultrices mattis. Facilisis ridiculus curabitur convallis platea senectus orci at conubia nisl, rhoncus morbi nec cum vitae in aptent purus semper, magnis tellus placerat tincidunt vestibulum dui malesuada pellentesque. Condimentum integer volutpat purus nulla leo nostra maecenas quisque cum rhoncus laoreet mattis, quam nullam aenean",
+    question: "2.How to reduce the PPV?",
+    answer: "We can reduce the ppv by reducing the charge weight(W) per delay.",
   },
   {
-    question: "3.Anim pariatur cliche reprehenderit, enim eiusmod high life",
+    question: "3.What is the effect of PPV?",
     answer:
-      "3.Lorem ipsum dolor sit amet consectetur adipiscing elit consequat sociosqu phasellus dictum tincidunt, ante vulputate natoque duis egestas hac libero donec id vitae volutpat integer imperdiet, aenean justo purus sed morbi torquent penatibus mollis posuere quam habitasse. Molestie sed netus sapien donec inceptos nostra vivamus semper platea lobortis volutpat, imperdiet eget gravida orci erat posuere mattis fames nulla. Sollicitudin sodales non vestibulum vehicula quis venenatis egestas id dictumst, semper convallis nam donec facilisi aenean neque. Tristique sapien cubilia fusce quam porttitor etiam torquent arcu, scelerisque vitae mauris nibh litora bibendum sed, senectus elementum per dui felis ultrices mattis. Facilisis ridiculus curabitur convallis platea senectus orci at conubia nisl, rhoncus morbi nec cum vitae in aptent purus semper, magnis tellus placerat tincidunt vestibulum dui malesuada pellentesque. Condimentum integer volutpat purus nulla leo nostra maecenas quisque cum rhoncus laoreet mattis, quam nullam aenean",
-  },
-  {
-    question: "4.Anim pariatur cliche reprehenderit, enim eiusmod high life",
-    answer:
-      "4.Lorem ipsum dolor sit amet consectetur adipiscing elit consequat sociosqu phasellus dictum tincidunt, ante vulputate natoque duis egestas hac libero donec id vitae volutpat integer imperdiet, aenean justo purus sed morbi torquent penatibus mollis posuere quam habitasse. Molestie sed netus sapien donec inceptos nostra vivamus semper platea lobortis volutpat, imperdiet eget gravida orci erat posuere mattis fames nulla. Sollicitudin sodales non vestibulum vehicula quis venenatis egestas id dictumst, semper convallis nam donec facilisi aenean neque. Tristique sapien cubilia fusce quam porttitor etiam torquent arcu, scelerisque vitae mauris nibh litora bibendum sed, senectus elementum per dui felis ultrices mattis. Facilisis ridiculus curabitur convallis platea senectus orci at conubia nisl, rhoncus morbi nec cum vitae in aptent purus semper, magnis tellus placerat tincidunt vestibulum dui malesuada pellentesque. Condimentum integer volutpat purus nulla leo nostra maecenas quisque cum rhoncus laoreet mattis, quam nullam aenean",
+      "If ppv is high it can generate cracks in the buildings, it also has the capacity to create air blast. Low frequency PPV is very dangerous.",
   },
 ];
 

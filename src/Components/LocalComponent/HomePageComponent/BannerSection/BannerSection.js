@@ -11,9 +11,12 @@ function BannerSection() {
       }}
     >
       <div className="text-center">
-        <h1 className="banner-heading mb-3">Welcome to new Mining World</h1>
+        <h1 className="banner-heading mb-3">Welcome to New Mining Era</h1>
         <p className="banner-caption mb-4">Perform Any Calculation With Ease</p>
-        <button className="custom-buttons">Get Started</button>
+        <a href="#calculationSection">
+          <button className="custom-buttons">Get Started</button>
+        </a>
+
         <button className="custom-outline-buttons">Explore more</button>
       </div>
     </div>

@@ -31,7 +31,7 @@ function FooterSection() {
               <div>
                 <FaMapMarked className="icon" />
                 <span className="footer-section-text ml-2">
-                  Lorem ipsum dolor sit, amet consectetur adipiscing elit
+                  IIT(ISM) Dhanbad
                 </span>
               </div>
             </div>

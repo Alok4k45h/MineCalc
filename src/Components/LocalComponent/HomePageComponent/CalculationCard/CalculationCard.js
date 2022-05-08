@@ -20,7 +20,7 @@ class CalculationCard extends Component {
     );
 
     return (
-      <div className="app-container">
+      <div className="app-container" id="calculationSection">
         <div className="calculation-search-container">
           <h1 className="heading">Calculations :</h1>
           <div className="search-input-container">

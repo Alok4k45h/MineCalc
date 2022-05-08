@@ -8,6 +8,9 @@ import Ppv from "./Pages/Ppv";
 import Npv from "./Pages/Npv";
 import Rqd from "./Pages/Rqd";
 import PressureMine from "./Pages/PressureMine";
+import ShovelDumper from "./Pages/ShovelDumper";
+import Contact from "./Pages/Contact";
+import About from "./Pages/About";
 
 //importing css
 import "./App.css";
@@ -27,12 +30,14 @@ function App() {
         <Routes>
           {/*Creating route for every page*/}
           <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<HomePage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/burdenspacing" element={<BurdenSpacing />} />
           <Route path="/ppv" element={<Ppv />} />
           <Route path="/npv" element={<Npv />} />
           <Route path="/rqd" element={<Rqd />} />
           <Route path="/pressuremine" element={<PressureMine />} />
+          <Route path="/shoveldumper" element={<ShovelDumper />} />
         </Routes>
         <Top />
         <FooterSection />

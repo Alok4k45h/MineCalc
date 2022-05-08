@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./ContactUsSection.css";
 
 function ContactUsSection() {
@@ -8,7 +9,9 @@ function ContactUsSection() {
         <h1 className="contact-us-section-heading mb-3">
           Let us Join Together
         </h1>
-        <button className="customs-button">CONTACT US</button>
+        <Link to="/contact">
+          <button className="customs-button">CONTACT US</button>
+        </Link>
       </div>
     </div>
   );

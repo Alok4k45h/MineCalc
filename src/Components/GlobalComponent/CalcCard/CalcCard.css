@@ -1,11 +1,11 @@
 .calculation-card {
   background-color: #ffffff;
   background-size: cover;
-  height: fit-content;
-  width: fit-content;
+  height: 100px;
+  width: 240px;
   border-radius: 8px;
   padding: 10px;
-  margin-right: 10px;
+  margin-right: 10px !important;
   border-left-width: 10px !important;
   border-left-color: chocolate !important;
 }
@@ -16,4 +16,5 @@
   font-size: 22px;
   font-weight: bold;
   margin-top: 10px;
+  text-decoration-color: #ffffff !important;
 }

@@ -4,47 +4,47 @@ class PressureMineCalc extends Component {
   constructor() {
     super();
 
-        this.state = {
-            r: 0,
-            n: 0,
-            dailyoutput: 0
-        };
+    this.state = {
+      r: 0,
+      n: 0,
+      dailyoutput: 0,
+    };
 
-        this.rChangeHandler = this.rChangeHandler.bind(this);
-        this.nChangeHandler = this.nChangeHandler.bind(this);
-        this.dailyoutputChangeHandler = this.dailyoutputChangeHandler.bind(this);
-        this.calculateHandler = this.calculateHandler.bind(this);
-    }
+    this.rChangeHandler = this.rChangeHandler.bind(this);
+    this.nChangeHandler = this.nChangeHandler.bind(this);
+    this.dailyoutputChangeHandler = this.dailyoutputChangeHandler.bind(this);
+    this.calculateHandler = this.calculateHandler.bind(this);
+  }
 
-    rChangeHandler(event) {
-        this.setState({ r: event.target.value });
-    }
+  rChangeHandler(event) {
+    this.setState({ r: event.target.value });
+  }
 
-    nChangeHandler(event) {
-        this.setState({ n: event.target.value });
-    }
-    dailyoutputChangeHandler(event) {
-        this.setState({ dailyoutput: event.target.value });
-    }
+  nChangeHandler(event) {
+    this.setState({ n: event.target.value });
+  }
+  dailyoutputChangeHandler(event) {
+    this.setState({ dailyoutput: event.target.value });
+  }
 
-    calculateHandler() {
-        console.log(this.state);
-        const { r, n, dailyoutput, } = this.state;
-        var x = n * 6.5;
-        var y = dailyoutput * 2.5;
-        var res = 0;
-        var air = 0;
-        if (x > y) {
-            air = x / 60;
-            res = r * air * air;
-        }
-        if (x <= y) {
-            air = y / 60;
-            res = r * air * air;
-        }
-        const result = res / (10 ** 6);
-        this.setState({ output: result });
+  calculateHandler() {
+    console.log(this.state);
+    const { r, n, dailyoutput } = this.state;
+    var x = n * 6.5;
+    var y = dailyoutput * 2.5;
+    var res = 0;
+    var air = 0;
+    if (x > y) {
+      air = x / 60;
+      res = r * air * air;
     }
+    if (x <= y) {
+      air = y / 60;
+      res = r * air * air;
+    }
+    const result = res / 10 ** 6;
+    this.setState({ output: result });
+  }
 
   render() {
     return (
@@ -53,11 +53,7 @@ class PressureMineCalc extends Component {
           <div className="container">
             <div className="row">
               <div className="col-12 col-md-7">
-                <img
-                  src=""
-                  className="page-section-image"
-                  alt=""
-                />
+                <img src="./fan.jpg" className="page-section-image" alt="" />
               </div>
 
               <div className="col-12 col-md-5 d-flex flex-column justify-content-center">
@@ -71,42 +67,40 @@ class PressureMineCalc extends Component {
                 </div>
                 <div className="col-12 mb-3">
                   <label>
-
-                                    R(Ns2/m8):
+                    R(Ns2/m8):
                     <input
                       className="ml-3"
-                                        type="number"
-                                        placeholder="Enter the R Value"
-                                        onChange={this.rChangeHandler}
-                                    />
+                      type="number"
+                      placeholder="Enter the R Value"
+                      onChange={this.rChangeHandler}
+                    />
                   </label>
                 </div>
 
                 <div className="col-12 mb-3">
                   <label>
-                                    n:
+                    n:
                     <input
                       className="ml-3"
-                                        type="number"
-                                        placeholder="Enter no of person working in largest shift"
-                                        onChange={this.nChangeHandler}
-                                    />
+                      type="number"
+                      placeholder="Enter no of person working in largest shift"
+                      onChange={this.nChangeHandler}
+                    />
                   </label>
                 </div>
 
                 <div className="col-12 mb-3">
                   <label>
-                                    dailyOutput(tonne):
+                    dailyOutput(tonne):
                     <input
                       className="ml-3"
-                                        type="number"
-                                        placeholder="Enter the daily output of coal"
-                                        onChange={this.dailyoutputChangeHandler}
-                                    />
+                      type="number"
+                      placeholder="Enter the daily output of coal"
+                      onChange={this.dailyoutputChangeHandler}
+                    />
                   </label>
                 </div>
 
-              
                 <div className="col-12 mb-5">
                   <div
                     className="btn btn-outline-primary"

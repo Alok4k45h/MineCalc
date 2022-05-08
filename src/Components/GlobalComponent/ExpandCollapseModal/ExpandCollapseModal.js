@@ -30,7 +30,10 @@ function ExpandCollapseModal(props) {
                   </h1>
                 </div>
                 <Collapse in={open}>
-                  <div id="example-collapse-text" className="answer-text">
+                  <div
+                    id="example-collapse-text"
+                    className="answer-text ml-3 pl-3"
+                  >
                     {props.answer}
                   </div>
                 </Collapse>

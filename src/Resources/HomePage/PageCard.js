@@ -19,6 +19,10 @@ const pageCard = [
     title: "Pressure Drop",
     pageLink: "/pressuremine",
   },
+  {
+    title: "Shovel Dumper Calculation",
+    pageLink: "/shoveldumper",
+  },
 ];
 
 export default pageCard;

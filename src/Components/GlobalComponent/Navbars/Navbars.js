@@ -27,7 +27,7 @@ export default class Navbars extends Component {
                 <Nav.Link
                   as={Link}
                   to={"/#"}
-                  className={`${path === "/" && "active font-bold"}`}
+                  className={`${path === "/" && "active"}`}
                 >
                   Home
                 </Nav.Link>
@@ -35,25 +35,17 @@ export default class Navbars extends Component {
                 <Nav.Link
                   as={Link}
                   to={"/about"}
-                  className={`${path === "/about" && "active font-bold"}`}
+                  className={`${path === "/about" && "active"}`}
                 >
                   AboutUs
                 </Nav.Link>
 
                 <Nav.Link
                   as={Link}
-                  to={"/reference"}
-                  className={`${path === "/reference" && "active font-bold"}`}
+                  to={"/contact"}
+                  className={`${path === "/contact" && "active"}`}
                 >
-                  Reference
-                </Nav.Link>
-
-                <Nav.Link
-                  as={Link}
-                  to={"/post"}
-                  className={`${path === "/post" && "active font-bold"}`}
-                >
-                  Post
+                  Contact Us
                 </Nav.Link>
               </Nav>
 

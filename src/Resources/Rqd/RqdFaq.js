@@ -1,28 +1,18 @@
 const Faq = [
   {
-    question: "1.Anim pariatur cliche reprehenderit, enim eiusmod high life",
+    question: "1.What is RQD?",
     answer:
-      "1.Lorem ipsum dolor sit amet consectetur adipiscing elit consequat sociosqu phasellus dictum tincidunt, ante vulputate natoque duis egestas hac libero donec id vitae volutpat integer imperdiet, aenean justo purus sed morbi torquent penatibus mollis posuere quam habitasse. Molestie sed netus sapien donec inceptos nostra vivamus semper platea lobortis volutpat, imperdiet eget gravida orci erat posuere mattis fames nulla. Sollicitudin sodales non vestibulum vehicula quis venenatis egestas id dictumst, semper convallis nam donec facilisi aenean neque. Tristique sapien cubilia fusce quam porttitor etiam torquent arcu, scelerisque vitae mauris nibh litora bibendum sed, senectus elementum per dui felis ultrices mattis. Facilisis ridiculus curabitur convallis platea senectus orci at conubia nisl, rhoncus morbi nec cum vitae in aptent purus semper, magnis tellus placerat tincidunt vestibulum dui malesuada pellentesque. Condimentum integer volutpat purus nulla leo nostra maecenas quisque cum rhoncus laoreet mattis, quam nullam aenean",
+      "RQD stands for Rock Quality Designation and it is a method designed by engineers for geologists to attempt to quantify qualitative information so engineers can do math.",
   },
   {
-    question: "2.Anim pariatur cliche reprehenderit, enim eiusmod high life",
+    question: "2.What is the importance of RQD?",
     answer:
-      "2.Lorem ipsum dolor sit amet consectetur adipiscing elit consequat sociosqu phasellus dictum tincidunt, ante vulputate natoque duis egestas hac libero donec id vitae volutpat integer imperdiet, aenean justo purus sed morbi torquent penatibus mollis posuere quam habitasse. Molestie sed netus sapien donec inceptos nostra vivamus semper platea lobortis volutpat, imperdiet eget gravida orci erat posuere mattis fames nulla. Sollicitudin sodales non vestibulum vehicula quis venenatis egestas id dictumst, semper convallis nam donec facilisi aenean neque. Tristique sapien cubilia fusce quam porttitor etiam torquent arcu, scelerisque vitae mauris nibh litora bibendum sed, senectus elementum per dui felis ultrices mattis. Facilisis ridiculus curabitur convallis platea senectus orci at conubia nisl, rhoncus morbi nec cum vitae in aptent purus semper, magnis tellus placerat tincidunt vestibulum dui malesuada pellentesque. Condimentum integer volutpat purus nulla leo nostra maecenas quisque cum rhoncus laoreet mattis, quam nullam aenean",
+      "Mine. RQD. It has no fundamental constants.Everything derives from Potential Energy which is meaningfully described. ",
   },
   {
-    question: "3.Anim pariatur cliche reprehenderit, enim eiusmod high life",
+    question: "3.Did mining locations depend upon RQD value?",
     answer:
-      "3.Lorem ipsum dolor sit amet consectetur adipiscing elit consequat sociosqu phasellus dictum tincidunt, ante vulputate natoque duis egestas hac libero donec id vitae volutpat integer imperdiet, aenean justo purus sed morbi torquent penatibus mollis posuere quam habitasse. Molestie sed netus sapien donec inceptos nostra vivamus semper platea lobortis volutpat, imperdiet eget gravida orci erat posuere mattis fames nulla. Sollicitudin sodales non vestibulum vehicula quis venenatis egestas id dictumst, semper convallis nam donec facilisi aenean neque. Tristique sapien cubilia fusce quam porttitor etiam torquent arcu, scelerisque vitae mauris nibh litora bibendum sed, senectus elementum per dui felis ultrices mattis. Facilisis ridiculus curabitur convallis platea senectus orci at conubia nisl, rhoncus morbi nec cum vitae in aptent purus semper, magnis tellus placerat tincidunt vestibulum dui malesuada pellentesque. Condimentum integer volutpat purus nulla leo nostra maecenas quisque cum rhoncus laoreet mattis, quam nullam aenean",
-  },
-  {
-    question: "4.Anim pariatur cliche reprehenderit, enim eiusmod high life",
-    answer:
-      "4.Lorem ipsum dolor sit amet consectetur adipiscing elit consequat sociosqu phasellus dictum tincidunt, ante vulputate natoque duis egestas hac libero donec id vitae volutpat integer imperdiet, aenean justo purus sed morbi torquent penatibus mollis posuere quam habitasse. Molestie sed netus sapien donec inceptos nostra vivamus semper platea lobortis volutpat, imperdiet eget gravida orci erat posuere mattis fames nulla. Sollicitudin sodales non vestibulum vehicula quis venenatis egestas id dictumst, semper convallis nam donec facilisi aenean neque. Tristique sapien cubilia fusce quam porttitor etiam torquent arcu, scelerisque vitae mauris nibh litora bibendum sed, senectus elementum per dui felis ultrices mattis. Facilisis ridiculus curabitur convallis platea senectus orci at conubia nisl, rhoncus morbi nec cum vitae in aptent purus semper, magnis tellus placerat tincidunt vestibulum dui malesuada pellentesque. Condimentum integer volutpat purus nulla leo nostra maecenas quisque cum rhoncus laoreet mattis, quam nullam aenean",
-  },
-  {
-    question: "5.Anim pariatur cliche reprehenderit, enim eiusmod high life",
-    answer:
-      "5.Lorem ipsum dolor sit amet consectetur adipiscing elit consequat sociosqu phasellus dictum tincidunt, ante vulputate natoque duis egestas hac libero donec id vitae volutpat integer imperdiet, aenean justo purus sed morbi torquent penatibus mollis posuere quam habitasse. Molestie sed netus sapien donec inceptos nostra vivamus semper platea lobortis volutpat, imperdiet eget gravida orci erat posuere mattis fames nulla. Sollicitudin sodales non vestibulum vehicula quis venenatis egestas id dictumst, semper convallis nam donec facilisi aenean neque. Tristique sapien cubilia fusce quam porttitor etiam torquent arcu, scelerisque vitae mauris nibh litora bibendum sed, senectus elementum per dui felis ultrices mattis. Facilisis ridiculus curabitur convallis platea senectus orci at conubia nisl, rhoncus morbi nec cum vitae in aptent purus semper, magnis tellus placerat tincidunt vestibulum dui malesuada pellentesque. Condimentum integer volutpat purus nulla leo nostra maecenas quisque cum rhoncus laoreet mattis, quam nullam aenean",
+      "The logistic cost of fuel is an important factor for the viability of any industry. Lesser it is better it is. Hence location of Coal mine is an important factor for Industry.Another aspect is logistic constraint. With the lesser availability of railway rakes for transportation of coal, availability of adequate quantity of coal for industrial requirements becomes a herculean task. This aspect also favors for ideal location of Coal mines for an industry requiring coal as fuel. But, quite less dependen upon the RQD.",
   },
 ];
 

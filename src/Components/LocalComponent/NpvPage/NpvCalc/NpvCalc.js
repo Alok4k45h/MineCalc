@@ -4,59 +4,54 @@ class NpvCalc extends Component {
   constructor() {
     super();
 
-        this.state = {
-            amountInvested: 0,
-            numberOfYear: 0,
-            rate: 0,
-            amountReturnPerYear: 0,
+    this.state = {
+      amountInvested: 0,
+      numberOfYear: 0,
+      rate: 0,
+      amountReturnPerYear: 0,
+    };
 
-        };
+    this.amountInvestedChangeHandler =
+      this.amountInvestedChangeHandler.bind(this);
+    this.numberOfYearChangeHandler = this.numberOfYearChangeHandler.bind(this);
+    this.rateChangeHandler = this.rateChangeHandler.bind(this);
+    this.amountReturnPerYearChangeHandler =
+      this.amountReturnPerYearChangeHandler.bind(this);
+    this.calculateHandler = this.calculateHandler.bind(this);
+  }
 
-        this.amountInvestedChangeHandler = this.amountInvestedChangeHandler.bind(this);
-        this.numberOfYearChangeHandler = this.numberOfYearChangeHandler.bind(this);
-        this.rateChangeHandler = this.rateChangeHandler.bind(this);
-        this.amountReturnPerYearChangeHandler = this.amountReturnPerYearChangeHandler.bind(this);
-        this.calculateHandler = this.calculateHandler.bind(this);
+  amountInvestedChangeHandler(event) {
+    this.setState({ amountInvested: event.target.value });
+  }
+
+  numberOfYearChangeHandler(event) {
+    this.setState({ numberOfYear: event.target.value });
+  }
+
+  rateChangeHandler(event) {
+    this.setState({ rate: event.target.value });
+  }
+  amountReturnPerYearChangeHandler(event) {
+    this.setState({ amountReturnPerYear: event.target.value });
+  }
+
+  calculateHandler() {
+    const { amountInvested, numberOfYear, rate, amountReturnPerYear } =
+      this.state;
+    var ans = 0;
+    var tail = 0;
+    var head = 0;
+    for (let i = 1; i <= numberOfYear; i++) {
+      tail = (1 + rate / 100) ** i;
+      head = amountReturnPerYear / tail;
+      ans = ans + head;
+      // console.log(amountReturnPerYear);
     }
 
-    amountInvestedChangeHandler(event) {
-        this.setState({ amountInvested: event.target.value });
-    }
+    const result = parseInt(ans) - parseInt(amountInvested);
 
-    numberOfYearChangeHandler(event) {
-        this.setState({ numberOfYear: event.target.value });
-    }
-
-    rateChangeHandler(event) {
-        this.setState({ rate: event.target.value });
-    }
-    amountReturnPerYearChangeHandler(event) {
-        this.setState({ amountReturnPerYear: event.target.value });
-    }
-
-    calculateHandler() {
-        const {
-            amountInvested,
-            numberOfYear,
-            rate,
-            amountReturnPerYear,
-        } = this.state;
-        var ans = 0;
-        var tail = 0;
-        var head = 0;
-        for (let i = 1; i <= numberOfYear; i++) {
-            tail = (1 + rate / 100) ** i;
-            head = amountReturnPerYear / tail;
-            ans = ans + head;
-            // console.log(amountReturnPerYear);
-        }
-
-        const result =
-
-            parseInt(ans) - parseInt(amountInvested);
-
-        this.setState({ output: result });
-    }
+    this.setState({ output: result });
+  }
 
   render() {
     return (
@@ -65,11 +60,7 @@ class NpvCalc extends Component {
           <div className="container">
             <div className="row">
               <div className="col-12 col-md-7">
-                <img
-                  src="./npv.jpg"
-                  className="page-section-image"
-                  alt=""
-                />
+                <img src="./npv.jpg" className="page-section-image" alt="" />
               </div>
 
               <div className="col-12 col-md-5 d-flex flex-column justify-content-center">
@@ -83,53 +74,52 @@ class NpvCalc extends Component {
                 </div>
                 <div className="col-12 mb-3">
                   <label>
-                                    amountInvested(RS):
+                    amountInvested(RS):
                     <input
                       className="ml-3"
-                                        type="number"
-                                        placeholder="Enter the amount invested in project"
-                                        onChange={this.amountInvestedChangeHandler}
-                                    />
+                      type="number"
+                      placeholder="Enter the amount invested in project"
+                      onChange={this.amountInvestedChangeHandler}
+                    />
                   </label>
                 </div>
 
                 <div className="col-12 mb-3">
                   <label>
-                                    numberOfYear:
+                    numberOfYear:
                     <input
                       className="ml-3"
-                                        type="number"
-                                        placeholder="Enter the no of year"
-                                        onChange={this.numberOfYearChangeHandler}
-                                    />
+                      type="number"
+                      placeholder="Enter the no of year"
+                      onChange={this.numberOfYearChangeHandler}
+                    />
                   </label>
                 </div>
 
                 <div className="col-12 mb-3">
                   <label>
-                                    rate(%):
+                    rate(%):
                     <input
                       className="ml-3"
-                                        type="number"
-                                        placeholder="Enter the rate Value"
-                                        onChange={this.rateChangeHandler}
-                                    />
+                      type="number"
+                      placeholder="Enter the rate Value"
+                      onChange={this.rateChangeHandler}
+                    />
                   </label>
                 </div>
 
                 <div className="col-12 mb-3">
                   <label>
-                                    amountReturnPerYear(RS):
+                    amountReturnPerYear(RS):
                     <input
                       className="ml-3"
-                                        type="number"
-                                        placeholder="Enter the Rock Density Value"
-                                        onChange={this.amountReturnPerYearChangeHandler}
-                                    />
+                      type="number"
+                      placeholder="Enter the amount of return per year."
+                      onChange={this.amountReturnPerYearChangeHandler}
+                    />
                   </label>
                 </div>
 
-               
                 <div className="col-12 mb-5">
                   <div
                     className="btn btn-outline-primary"
