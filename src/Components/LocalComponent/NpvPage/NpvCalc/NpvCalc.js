@@ -5,10 +5,10 @@ class NpvCalc extends Component {
     super();
 
     this.state = {
-      amountInvested: 0,
-      numberOfYear: 0,
-      rate: 0,
-      amountReturnPerYear: 0,
+      amountInvested: "null",
+      numberOfYear: "null",
+      rate: "null",
+      amountReturnPerYear: "null",
     };
 
     this.amountInvestedChangeHandler =
@@ -18,6 +18,8 @@ class NpvCalc extends Component {
     this.amountReturnPerYearChangeHandler =
       this.amountReturnPerYearChangeHandler.bind(this);
     this.calculateHandler = this.calculateHandler.bind(this);
+    this.demoDataHandler = this.demoDataHandler.bind(this);
+    this.resetHandler = this.resetHandler.bind(this);
   }
 
   amountInvestedChangeHandler(event) {
@@ -52,6 +54,24 @@ class NpvCalc extends Component {
 
     this.setState({ output: result });
   }
+  demoDataHandler() {
+    this.setState({
+      amountInvested: 400,
+      numberOfYear: 5,
+      rate: 25,
+      amountReturnPerYear: 700,
+      output: null,
+    });
+  }
+  resetHandler() {
+    this.setState({
+      amountInvested: "null",
+      numberOfYear: "null",
+      rate: "null",
+      amountReturnPerYear: "null",
+      output: null,
+    });
+  }
 
   render() {
     return (
@@ -76,6 +96,7 @@ class NpvCalc extends Component {
                   <label>
                     amountInvested(RS):
                     <input
+                      value={this.state.amountInvested}
                       className="ml-3"
                       type="number"
                       placeholder="Enter the amount invested in project"
@@ -88,6 +109,7 @@ class NpvCalc extends Component {
                   <label>
                     numberOfYear:
                     <input
+                      value={this.state.numberOfYear}
                       className="ml-3"
                       type="number"
                       placeholder="Enter the no of year"
@@ -100,6 +122,7 @@ class NpvCalc extends Component {
                   <label>
                     rate(%):
                     <input
+                      value={this.state.rate}
                       className="ml-3"
                       type="number"
                       placeholder="Enter the rate Value"
@@ -112,6 +135,7 @@ class NpvCalc extends Component {
                   <label>
                     amountReturnPerYear(RS):
                     <input
+                      value={this.state.amountReturnPerYear}
                       className="ml-3"
                       type="number"
                       placeholder="Enter the amount of return per year."
@@ -120,12 +144,33 @@ class NpvCalc extends Component {
                   </label>
                 </div>
 
-                <div className="col-12 mb-5">
-                  <div
-                    className="btn btn-outline-primary"
-                    onClick={this.calculateHandler}
-                  >
-                    Calculate
+                <div className="container">
+                  <div className="row">
+                    <div className="col-12 col-sm-4 mb-5">
+                      <div
+                        className="btn btn-outline-primary"
+                        onClick={this.demoDataHandler}
+                      >
+                        Demo data
+                      </div>
+                    </div>
+                    <div className="col-12 col-sm-4 mb-5">
+                      <div
+                        className="btn btn-outline-primary"
+                        onClick={this.calculateHandler}
+                      >
+                        Calculate
+                      </div>
+                    </div>
+
+                    <div className="col-12 col-sm-4 mb-5">
+                      <div
+                        className="btn btn-outline-primary"
+                        onClick={this.resetHandler}
+                      >
+                        Reset
+                      </div>
+                    </div>
                   </div>
                 </div>
 
