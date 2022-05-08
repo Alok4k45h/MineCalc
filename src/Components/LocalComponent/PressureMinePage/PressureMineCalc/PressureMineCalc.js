@@ -5,15 +5,17 @@ class PressureMineCalc extends Component {
     super();
 
     this.state = {
-      r: 0,
-      n: 0,
-      dailyoutput: 0,
+      r: "null",
+      n: "null",
+      dailyoutput: "null",
     };
 
     this.rChangeHandler = this.rChangeHandler.bind(this);
     this.nChangeHandler = this.nChangeHandler.bind(this);
     this.dailyoutputChangeHandler = this.dailyoutputChangeHandler.bind(this);
     this.calculateHandler = this.calculateHandler.bind(this);
+    this.demoDataHandler = this.demoDataHandler.bind(this);
+    this.resetHandler = this.resetHandler.bind(this);
   }
 
   rChangeHandler(event) {
@@ -32,8 +34,8 @@ class PressureMineCalc extends Component {
     const { r, n, dailyoutput } = this.state;
     var x = n * 6.5;
     var y = dailyoutput * 2.5;
-    var res = 0;
-    var air = 0;
+    var res = "null";
+    var air = "null";
     if (x > y) {
       air = x / 60;
       res = r * air * air;
@@ -44,6 +46,23 @@ class PressureMineCalc extends Component {
     }
     const result = res / 10 ** 6;
     this.setState({ output: result });
+  }
+
+  demoDataHandler() {
+    this.setState({
+      r: 4,
+      n: 2,
+      dailyoutput: 7,
+      output: null,
+    });
+  }
+  resetHandler() {
+    this.setState({
+      r: "null",
+      n: "null",
+      dailyoutput: "null",
+      output: null,
+    });
   }
 
   render() {
@@ -69,6 +88,7 @@ class PressureMineCalc extends Component {
                   <label>
                     R(Ns2/m8):
                     <input
+                      value={this.state.r}
                       className="ml-3"
                       type="number"
                       placeholder="Enter the R Value"
@@ -81,6 +101,7 @@ class PressureMineCalc extends Component {
                   <label>
                     n:
                     <input
+                      value={this.state.n}
                       className="ml-3"
                       type="number"
                       placeholder="Enter no of person working in largest shift"
@@ -93,6 +114,7 @@ class PressureMineCalc extends Component {
                   <label>
                     dailyOutput(tonne):
                     <input
+                      value={this.state.dailyoutput}
                       className="ml-3"
                       type="number"
                       placeholder="Enter the daily output of coal"
@@ -101,12 +123,33 @@ class PressureMineCalc extends Component {
                   </label>
                 </div>
 
-                <div className="col-12 mb-5">
-                  <div
-                    className="btn btn-outline-primary"
-                    onClick={this.calculateHandler}
-                  >
-                    Calculate
+                <div className="container">
+                  <div className="row">
+                    <div className="col-12 col-sm-4 mb-5">
+                      <div
+                        className="btn btn-outline-primary"
+                        onClick={this.demoDataHandler}
+                      >
+                        Demo data
+                      </div>
+                    </div>
+                    <div className="col-12 col-sm-4 mb-5">
+                      <div
+                        className="btn btn-outline-primary"
+                        onClick={this.calculateHandler}
+                      >
+                        Calculate
+                      </div>
+                    </div>
+
+                    <div className="col-12 col-sm-4 mb-5">
+                      <div
+                        className="btn btn-outline-primary"
+                        onClick={this.resetHandler}
+                      >
+                        Reset
+                      </div>
+                    </div>
                   </div>
                 </div>
 
